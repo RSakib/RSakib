@@ -58,9 +58,20 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans antialiased">
+    <div className="relative min-h-screen bg-white text-gray-800 font-sans antialiased">
+      
+      {/* Top Banner Background: Spans full screen width with vertical fade only */}
+      <div 
+        className="absolute top-0 left-0 right-0 h-[420px] pointer-events-none z-0 bg-[#FFC72C]"
+        style={{
+          opacity: aboutOpacity,
+          maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 85%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 85%)'
+        }}
+      />
+
       {/* Navigation */}
-      <header className="border-b border-gray-200 sticky top-0 bg-white/95 backdrop-blur-sm z-10">
+      <header className="sticky top-0 z-30 border-b border-gray-200 bg-white/95 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
           
           {/* Transitioning Header Name */}
@@ -109,19 +120,20 @@ export default function App() {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-6 py-12 space-y-16">
-        {/* Intro / Header with Dynamic Fade Out */}
+      {/* Main Content Container */}
+      <main className="relative z-10 max-w-4xl mx-auto px-6 pt-2 sm:pt-4 pb-12 space-y-16">
+        {/* Intro / Header Section */}
         <section 
           id="about" 
           style={{ opacity: aboutOpacity }}
-          className="scroll-mt-20 flex flex-col-reverse sm:flex-row items-center justify-between gap-8 py-4 transition-opacity duration-75 ease-linear"
+          className="scroll-mt-20 flex flex-col-reverse sm:flex-row items-center justify-between gap-8 p-6 transition-opacity duration-75 ease-linear"
         >
           <div className="space-y-4 max-w-xl">
             <h1 id="main-title" className="text-3xl font-bold text-gray-900 sm:text-4xl">
               Ragib Sakib
             </h1>
             
-            {/* Bio Sentences Split Across Separate Lines */}
+            {/* Bio Sentences */}
             <div className="text-base text-gray-600 font-medium space-y-1">
               <p>Machine Learning Engineer based in Hawthorne, CA.</p>
               <p>Specializing in Computer Vision and Recommendation Systems.</p>
@@ -137,6 +149,7 @@ export default function App() {
               <a href="https://huggingface.co/RSakib" target="_blank" rel="noreferrer" className="text-uscRed hover:underline">HuggingFace</a>
             </div>
           </div>
+
           <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-uscRed flex-shrink-0 bg-gray-100 shadow-md">
             <img src="/profile.jpg" alt="Ragib Sakib" className="w-full h-full object-cover" />
           </div>
@@ -375,7 +388,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 py-8 text-center text-xs text-gray-500 space-y-2">
+      <footer className="relative z-10 border-t border-gray-200 py-8 text-center text-xs text-gray-500 space-y-2">
         <p>© {new Date().getFullYear()} Ragib Sakib. Built with React and Tailwind CSS.</p>
         <p className="text-gray-400">
           Logos provided via <a href="https://commons.wikimedia.org/wiki/File:USC_Trojans_logo.svg" target="_blank" rel="noreferrer" className="underline hover:text-gray-600">Wikimedia Commons (USC)</a> and <a href="https://commons.wikimedia.org/wiki/File:University_of_California,_Irvine_logo.svg" target="_blank" rel="noreferrer" className="underline hover:text-gray-600">Wikimedia Commons (UCI)</a>.
