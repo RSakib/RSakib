@@ -9,6 +9,9 @@ export default {
       colors: {
         uscRed: '#990000',
       },
+      fontFamily: {
+        sans: ['Inter', '"Noto Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+      },
     },
   },
   plugins: [],

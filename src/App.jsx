@@ -54,14 +54,13 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-white text-gray-800 font-['-apple-system',BlinkMacSystemFont,'SF_Pro_Text','SF_Pro_Display',system-ui,sans-serif] antialiased">
+    <div className="relative min-h-screen bg-white text-gray-800 font-sans antialiased">
       
-      {/* Radial gradient dynamically spans 150% screen width without generating layout overflow */}
       <div 
-        className="absolute top-0 left-0 right-0 h-[450px] pointer-events-none z-0 transition-opacity duration-75 ease-linear"
+        className="absolute top-0 left-0 right-0 w-full h-[450px] pointer-events-none z-0 transition-opacity duration-75 ease-linear"
         style={{
           opacity: aboutOpacity,
-          background: 'radial-gradient(ellipse 150% 100% at 50% 0%, #FFC72C 0%, rgba(255, 199, 44, 0.4) 50%, rgba(255, 255, 255, 0) 100%)'
+          background: 'linear-gradient(to bottom, #FFC72C 0%, rgba(255, 199, 44, 0.6) 40%, rgba(255, 255, 255, 0) 100%)'
         }}
       />
 
@@ -86,6 +85,12 @@ export default function App() {
               About
             </a>
             <a 
+              href="#education" 
+              className={`transition-colors ${activeSection === 'education' ? 'text-uscRed font-bold' : 'hover:text-uscRed'}`}
+            >
+              Education
+            </a>
+            <a 
               href="#experience" 
               className={`transition-colors ${activeSection === 'experience' ? 'text-uscRed font-bold' : 'hover:text-uscRed'}`}
             >
@@ -96,12 +101,6 @@ export default function App() {
               className={`transition-colors ${activeSection === 'projects' ? 'text-uscRed font-bold' : 'hover:text-uscRed'}`}
             >
               Projects
-            </a>
-            <a 
-              href="#education" 
-              className={`transition-colors ${activeSection === 'education' ? 'text-uscRed font-bold' : 'hover:text-uscRed'}`}
-            >
-              Education
             </a>
             <a 
               href="#skills" 
@@ -145,6 +144,50 @@ export default function App() {
           </div>
         </section>
 
+        <section id="education" className="scroll-mt-20 space-y-6">
+          <h2 className="text-lg sm:text-xl font-bold text-gray-900 border-b border-gray-200 pb-2">
+            Education
+          </h2>
+          <div className="space-y-6">
+            <div className="border-l-2 border-uscRed pl-4 py-1">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-0">
+                <div className="flex items-center gap-3">
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/9/94/USC_Trojans_logo.svg" 
+                    alt="USC Logo" 
+                    className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
+                  />
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h3 className="font-semibold text-sm sm:text-base text-gray-900">University of Southern California</h3>
+                      <span className="bg-uscRed/10 text-uscRed text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded">Current</span>
+                    </div>
+                    <p className="text-xs sm:text-sm text-uscRed font-medium">MS in Computer Science (Artificial Intelligence)</p>
+                  </div>
+                </div>
+                <span className="text-[11px] sm:text-xs text-gray-500 whitespace-nowrap pl-10 sm:pl-0">Sept 2026 – June 2028 (Expected)</span>
+              </div>
+            </div>
+
+            <div className="pl-4 py-1">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-0">
+                <div className="flex items-center gap-3">
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/8/8f/University_of_California%2C_Irvine_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" 
+                    alt="UCI Logo" 
+                    className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
+                  />
+                  <div>
+                    <h3 className="font-semibold text-sm sm:text-base text-gray-900">University of California, Irvine</h3>
+                    <p className="text-xs sm:text-sm text-gray-700 font-medium">BS in Software Engineering (GPA: 3.6)</p>
+                  </div>
+                </div>
+                <span className="text-[11px] sm:text-xs text-gray-500 whitespace-nowrap pl-10 sm:pl-0">Sept 2020 – June 2024</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="experience" className="scroll-mt-20 space-y-6">
           <h2 className="text-lg sm:text-xl font-bold text-gray-900 border-b border-gray-200 pb-2">
             Work Experience
@@ -155,7 +198,8 @@ export default function App() {
                 <h3 className="font-semibold text-sm sm:text-base text-gray-900">Canon USA</h3>
                 <span className="text-[11px] sm:text-xs text-gray-500">Irvine, CA</span>
               </div>
-              <p className="text-xs sm:text-sm text-uscRed font-medium">Software and Machine Learning Engineer (Trainee) | Sept 2023 – Feb 2025</p>
+              <p className="text-xs sm:text-sm text-uscRed font-medium">Software and Machine Learning Engineer (Trainee)</p>
+              <p className="text-[11px] sm:text-xs text-gray-500 font-medium">Sept 2023 – Feb 2025</p>
               <ul className="list-disc list-inside text-xs sm:text-sm text-gray-600 space-y-1 pl-1">
                 <li>Prototyped a Python pipeline using SAM 2 segmentation, Hough transforms, and clustering for object corner localization.</li>
                 <li>Ported spatial clustering and geometric pipelines to C++, reducing execution latency by 90% via pass-by-reference.</li>
@@ -169,7 +213,8 @@ export default function App() {
                 <h3 className="font-semibold text-sm sm:text-base text-gray-900">Canon USA</h3>
                 <span className="text-[11px] sm:text-xs text-gray-500">Irvine, CA</span>
               </div>
-              <p className="text-xs sm:text-sm text-uscRed font-medium">Software Intern | June 2023 – Aug 2023</p>
+              <p className="text-xs sm:text-sm text-uscRed font-medium">Software Intern</p>
+              <p className="text-[11px] sm:text-xs text-gray-500 font-medium">June 2023 – Aug 2023</p>
               <ul className="list-disc list-inside text-xs sm:text-sm text-gray-600 space-y-1 pl-1">
                 <li>Converted major C# codebase from old UWP standard to current standards to remove technical debt.</li>
                 <li>Created a multi-platform mobile and web application expanding upon current web-only clients.</li>
@@ -182,7 +227,8 @@ export default function App() {
                 <h3 className="font-semibold text-sm sm:text-base text-gray-900">Boeing Satellite Systems</h3>
                 <span className="text-[11px] sm:text-xs text-gray-500">El Segundo, CA</span>
               </div>
-              <p className="text-xs sm:text-sm text-uscRed font-medium">Engineering Intern | June 2019 – Aug 2019</p>
+              <p className="text-xs sm:text-sm text-uscRed font-medium">Engineering Intern</p>
+              <p className="text-[11px] sm:text-xs text-gray-500 font-medium">June 2019 – Aug 2019</p>
               <ul className="list-disc list-inside text-xs sm:text-sm text-gray-600 space-y-1 pl-1">
                 <li>Managed parts inventory and quality inspection for satellite manufacturing components.</li>
               </ul>
@@ -271,50 +317,6 @@ export default function App() {
               </ul>
             </div>
 
-          </div>
-        </section>
-
-        <section id="education" className="scroll-mt-20 space-y-6">
-          <h2 className="text-lg sm:text-xl font-bold text-gray-900 border-b border-gray-200 pb-2">
-            Education
-          </h2>
-          <div className="space-y-6">
-            <div className="border-l-2 border-uscRed pl-4 py-1">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-0">
-                <div className="flex items-center gap-3">
-                  <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/9/94/USC_Trojans_logo.svg" 
-                    alt="USC Logo" 
-                    className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
-                  />
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2">
-                      <h3 className="font-semibold text-sm sm:text-base text-gray-900">University of Southern California</h3>
-                      <span className="bg-uscRed/10 text-uscRed text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded">Current</span>
-                    </div>
-                    <p className="text-xs sm:text-sm text-uscRed font-medium">MS in Computer Science (Artificial Intelligence)</p>
-                  </div>
-                </div>
-                <span className="text-[11px] sm:text-xs text-gray-500 whitespace-nowrap pl-10 sm:pl-0">Sept 2026 – June 2028 (Expected)</span>
-              </div>
-            </div>
-
-            <div className="pl-4 py-1">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-0">
-                <div className="flex items-center gap-3">
-                  <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/8/8f/University_of_California%2C_Irvine_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" 
-                    alt="UCI Logo" 
-                    className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
-                  />
-                  <div>
-                    <h3 className="font-semibold text-sm sm:text-base text-gray-900">University of California, Irvine</h3>
-                    <p className="text-xs sm:text-sm text-gray-700 font-medium">BS in Software Engineering (GPA: 3.6)</p>
-                  </div>
-                </div>
-                <span className="text-[11px] sm:text-xs text-gray-500 whitespace-nowrap pl-10 sm:pl-0">Sept 2020 – June 2024</span>
-              </div>
-            </div>
           </div>
         </section>
 
