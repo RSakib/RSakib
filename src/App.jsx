@@ -15,7 +15,6 @@ export default function App() {
         });
       },
       {
-        // Target a detection line near the top-middle of the screen
         rootMargin: '-10% 0px -70% 0px',
         threshold: 0,
       }
@@ -74,8 +73,8 @@ export default function App() {
         <section id="about" className="scroll-mt-20 flex flex-col-reverse sm:flex-row items-center justify-between gap-8 py-4">
           <div className="space-y-4 max-w-xl">
             <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">Ragib Sakib</h1>
-            <p className="text-base text-gray-600 leading-relaxed">
-              Software and Machine Learning Engineer based in Hawthorne, CA, building machine learning models with a focus on Computer Vision and Recommendation Systems. Currently pursuing a Master’s in Computer Science (Artificial Intelligence) at USC and formerly a Software/ML Intern at Canon USA, with experience specializing in deep learning pipeline optimization, spatial processing, and multi-platform applications.
+            <p className="text-base text-gray-600 leading-relaxed font-medium">
+              Machine Learning Engineer based in Hawthorne, CA. Specializing in Computer Vision and Recommendation Systems.
             </p>
             <div className="flex flex-wrap gap-4 text-sm font-medium pt-2">
               <a href="mailto:Ragibsakib2002@gmail.com" className="text-uscRed hover:underline">Email</a>
@@ -188,84 +187,88 @@ export default function App() {
           </div>
         </section>
 
-        {/* Software Projects */}
+        {/* Software Projects - 2xN Flexible Alignment Grid */}
         <section id="projects" className="scroll-mt-20 space-y-6">
           <h2 className="text-xl font-bold text-gray-900 border-b border-gray-200 pb-2">
             Software Projects
           </h2>
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
             
             {/* Two Tower Project Card */}
-            <div className="border border-gray-200 rounded-lg p-6 hover:border-uscRed transition-colors space-y-5 bg-white shadow-sm">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="border border-gray-200 rounded-lg p-5 hover:border-uscRed transition-colors bg-white shadow-sm space-y-3">
+              <div className="flex items-start justify-between gap-2">
                 <div>
-                  <h3 className="font-bold text-lg text-gray-900">MovieLens 1M Two-Tower Recommendation Engine</h3>
+                  <h3 className="font-bold text-base text-gray-900 leading-snug">MovieLens 1M Two-Tower Engine</h3>
                   <p className="text-xs text-gray-500 mt-0.5">June 2026</p>
                 </div>
                 <a 
                   href="https://github.com/RSakib/Pre-2001-Movie-Recs-via-Two-Tower-Neural-Network" 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="inline-flex items-center justify-center gap-2 bg-uscRed hover:bg-red-800 text-white text-xs font-semibold px-4 py-2.5 rounded-md shadow-sm transition-all duration-200 hover:shadow-md self-start sm:self-auto"
+                  className="inline-flex items-center gap-1.5 bg-uscRed hover:bg-red-800 text-white text-xs font-semibold px-3 py-1.5 rounded-md transition-all flex-shrink-0"
                 >
-                  <span>View Repository</span>
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span>Repo/Demo</span>
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                 </a>
               </div>
 
-              {/* Project Preview Image */}
-              <div className="overflow-hidden rounded-lg border border-gray-200 bg-black">
+              <div className="overflow-hidden rounded-md border border-gray-200 bg-black">
                 <img 
                   src="/Two-Tower.jpg" 
                   alt="MovieLens Pre-2001 Two-Tower Recommendation Interface" 
-                  className="w-full h-auto object-cover max-h-80 hover:scale-[1.01] transition-transform duration-200"
+                  className="w-full h-36 object-cover hover:scale-[1.01] transition-transform duration-200"
                 />
               </div>
 
-              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1.5">
-                <li>Built a two-tower neural retrieval model with in-batch negative ranking loss for movie recommendations.</li>
-                <li>Engineered user tower encoding gender, age group, and sequential watch history for personalized signals.</li>
-                <li>Indexed movie catalog into FAISS flat inner product index for fast retrieval at inference time.</li>
-                <li>Achieved NDCG@10 of 0.0320 evaluated on an 80-20 time-based split across 3,700 movies; generated t-SNE visualizations.</li>
+              <ul className="list-disc list-inside text-xs text-gray-600 space-y-1">
+                <li>Built a two-tower neural retrieval model with in-batch negative ranking loss.</li>
+                <li>Engineered user tower encoding demographic and watch history signals.</li>
+                <li>Indexed movie catalog into FAISS flat inner product index for quick inference.</li>
+                <li>Achieved NDCG@10 of 0.0320 evaluated on an 80-20 time-based split.</li>
               </ul>
             </div>
 
             {/* SVD Project Card */}
-            <div className="border border-gray-200 rounded-lg p-6 hover:border-uscRed transition-colors space-y-4 bg-white shadow-sm">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="border border-gray-200 rounded-lg p-5 hover:border-uscRed transition-colors bg-white shadow-sm space-y-3">
+              <div className="flex items-start justify-between gap-2">
                 <div>
-                  <h3 className="font-bold text-lg text-gray-900">MovieLens 1M SVD Recommendation Engine</h3>
+                  <h3 className="font-bold text-base text-gray-900 leading-snug">MovieLens 1M SVD Recommendation Engine</h3>
                   <p className="text-xs text-gray-500 mt-0.5">May 2026</p>
                 </div>
                 <a 
                   href="https://huggingface.co/spaces/RSakib/MovieLens-Hybrid-SVD-Recommendation-GUI" 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="inline-flex items-center justify-center gap-2 bg-uscRed hover:bg-red-800 text-white text-xs font-semibold px-4 py-2.5 rounded-md shadow-sm transition-all duration-200 hover:shadow-md self-start sm:self-auto"
+                  className="inline-flex items-center gap-1.5 bg-uscRed hover:bg-red-800 text-white text-xs font-semibold px-3 py-1.5 rounded-md transition-all flex-shrink-0"
                 >
-                  <span>Launch Live Demo</span>
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span>Demo</span>
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                 </a>
               </div>
-              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1.5">
-                <li>Engineered a recommendation web app to replicate the algorithms used by Netflix Recommendations in 2008.</li>
-                <li>Optimized recommendations for 6,040 users using Truncated SVD to create a low-rank, low-latency prediction lookup matrix.</li>
-                <li>Architected a neighborhood-based co-occurrence heuristic fallback to bypass SVD's limits and add interaction to app.</li>
+
+              <ul className="list-disc list-inside text-xs text-gray-600 space-y-1.5">
+                <li>Engineered a recommendation web app replicating 2008 Netflix algorithms.</li>
+                <li>Optimized recommendations for 6,040 users using Truncated SVD.</li>
+                <li>Created a low-rank, low-latency prediction lookup matrix.</li>
+                <li>Architected a co-occurrence heuristic fallback to resolve cold-start issues.</li>
               </ul>
             </div>
 
             {/* Capstone Project Card */}
-            <div className="border border-gray-200 rounded-lg p-6 hover:border-uscRed transition-colors space-y-2 bg-white shadow-sm">
-              <h3 className="font-bold text-lg text-gray-900">MUGIC Gait Analysis Software (College Capstone)</h3>
-              <p className="text-xs text-gray-500 pb-2">Sept 2023 – June 2024 | Project Lead & Front-End Engineer</p>
-              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1.5">
-                <li>Led a team of 3 programmers and 2 designers building a cross-platform rehabilitation app for an Irvine startup.</li>
-                <li>Connected app to motion sensors to provide real-time gait feedback.</li>
-                <li>Used SQLite for multi-user data storage, standardized formatting with Python linter, and maintained 80% unit test coverage.</li>
+            <div className="border border-gray-200 rounded-lg p-5 hover:border-uscRed transition-colors bg-white shadow-sm space-y-3">
+              <div>
+                <h3 className="font-bold text-base text-gray-900 leading-snug">MUGIC Gait Analysis Software</h3>
+                <p className="text-xs text-gray-500 mt-0.5">Sept 2023 – June 2024 | Capstone Lead</p>
+              </div>
+
+              <ul className="list-disc list-inside text-xs text-gray-600 space-y-1.5">
+                <li>Led 3 programmers and 2 designers building a cross-platform rehab app.</li>
+                <li>Connected app to motion sensors for real-time gait feedback.</li>
+                <li>Used SQLite for multi-user data storage and targeted 80% test coverage.</li>
               </ul>
             </div>
 
