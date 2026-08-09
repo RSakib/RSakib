@@ -56,9 +56,9 @@ export default function App() {
   return (
     <div className="relative min-h-screen bg-white text-gray-800 font-['-apple-system',BlinkMacSystemFont,'SF_Pro_Text','SF_Pro_Display',system-ui,sans-serif] antialiased">
       
-      {/* Bleeding yellow gradient extended to 200vw to cover iOS horizontal bounce */}
+      {/* Reverted standard top gradient banner */}
       <div 
-        className="absolute top-0 -left-[50vw] -right-[50vw] w-[200vw] h-[420px] pointer-events-none z-0 bg-[#FFC72C]"
+        className="absolute top-0 left-0 right-0 h-[420px] pointer-events-none z-0 bg-[#FFC72C]"
         style={{
           opacity: aboutOpacity,
           maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 85%)',
