@@ -56,13 +56,12 @@ export default function App() {
   return (
     <div className="relative min-h-screen bg-white text-gray-800 font-['-apple-system',BlinkMacSystemFont,'SF_Pro_Text','SF_Pro_Display',system-ui,sans-serif] antialiased">
       
-      {/* Reverted standard top gradient banner */}
+      {/* Radial gradient dynamically spans 150% screen width without generating layout overflow */}
       <div 
-        className="absolute top-0 left-0 right-0 h-[420px] pointer-events-none z-0 bg-[#FFC72C]"
+        className="absolute top-0 left-0 right-0 h-[450px] pointer-events-none z-0 transition-opacity duration-75 ease-linear"
         style={{
           opacity: aboutOpacity,
-          maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 85%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 85%)'
+          background: 'radial-gradient(ellipse 150% 100% at 50% 0%, #FFC72C 0%, rgba(255, 199, 44, 0.4) 50%, rgba(255, 255, 255, 0) 100%)'
         }}
       />
 
