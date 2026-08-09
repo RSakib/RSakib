@@ -58,7 +58,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-white text-gray-800 font-sans antialiased">
+    <div className="relative min-h-screen bg-white text-gray-800 font-['-apple-system',BlinkMacSystemFont,'SF_Pro_Text','SF_Pro_Display',system-ui,sans-serif] antialiased">
       
       {/* Top Banner Background: Spans full screen width with vertical fade only */}
       <div 
@@ -70,7 +70,7 @@ export default function App() {
         }}
       />
 
-      {/* Navigation - Clean White Blur */}
+      {/* Navigation - Clean White Blur with SST / San Francisco styling */}
       <header className="sticky top-0 z-30 border-b border-gray-200/80 bg-white/80 backdrop-blur-md transition-colors duration-200">
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
           
@@ -129,7 +129,7 @@ export default function App() {
           className="scroll-mt-20 flex flex-col-reverse sm:flex-row items-center justify-between gap-8 p-6 transition-opacity duration-75 ease-linear"
         >
           <div className="space-y-4 max-w-xl">
-            <h1 id="main-title" className="text-3xl font-bold text-gray-900 sm:text-4xl">
+            <h1 id="main-title" className="text-3xl font-bold text-gray-900 sm:text-4xl tracking-tight">
               Ragib Sakib
             </h1>
             
