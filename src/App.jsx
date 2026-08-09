@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('about');
+  const [showNavTitle, setShowNavTitle] = useState(false);
+  const [aboutOpacity, setAboutOpacity] = useState(1);
 
   useEffect(() => {
+    // 1. Intersection Observer for Active Section Highlighting
     const sections = document.querySelectorAll('section[id]');
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -22,8 +24,36 @@ export default function App() {
 
     sections.forEach((section) => observer.observe(section));
 
+    // 2. Scroll Listener to handle Nav Title Swap & About Fade Out
+    const handleScroll = () => {
+      const mainTitle = document.getElementById('main-title');
+      if (mainTitle) {
+        const rect = mainTitle.getBoundingClientRect();
+        
+        // Header title threshold
+        setShowNavTitle(rect.bottom < 20);
+
+        // Smooth opacity calculation for About section based on scroll position
+        const fadeStart = 120;
+        const fadeEnd = -100;
+        const currentPos = rect.top;
+
+        if (currentPos >= fadeStart) {
+          setAboutOpacity(1);
+        } else if (currentPos <= fadeEnd) {
+          setAboutOpacity(0);
+        } else {
+          const opacity = (currentPos - fadeEnd) / (fadeStart - fadeEnd);
+          setAboutOpacity(Math.max(0, Math.min(1, opacity)));
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
     return () => {
       sections.forEach((section) => observer.unobserve(section));
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -32,7 +62,18 @@ export default function App() {
       {/* Navigation */}
       <header className="border-b border-gray-200 sticky top-0 bg-white/95 backdrop-blur-sm z-10">
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <span className="font-bold text-lg text-gray-900 tracking-tight">Ragib Sakib</span>
+          
+          {/* Transitioning Header Name */}
+          <span 
+            className={`font-bold text-lg text-gray-900 tracking-tight transition-all duration-300 ease-in-out ${
+              showNavTitle 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-2 pointer-events-none'
+            }`}
+          >
+            Ragib Sakib
+          </span>
+
           <nav className="space-x-6 text-sm text-gray-600 font-medium">
             <a 
               href="#about" 
@@ -69,13 +110,23 @@ export default function App() {
       </header>
 
       <main className="max-w-4xl mx-auto px-6 py-12 space-y-16">
-        {/* Intro / Header */}
-        <section id="about" className="scroll-mt-20 flex flex-col-reverse sm:flex-row items-center justify-between gap-8 py-4">
+        {/* Intro / Header with Dynamic Fade Out */}
+        <section 
+          id="about" 
+          style={{ opacity: aboutOpacity }}
+          className="scroll-mt-20 flex flex-col-reverse sm:flex-row items-center justify-between gap-8 py-4 transition-opacity duration-75 ease-linear"
+        >
           <div className="space-y-4 max-w-xl">
-            <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">Ragib Sakib</h1>
-            <p className="text-base text-gray-600 leading-relaxed font-medium">
-              Machine Learning Engineer based in Hawthorne, CA. Specializing in Computer Vision and Recommendation Systems.
-            </p>
+            <h1 id="main-title" className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Ragib Sakib
+            </h1>
+            
+            {/* Bio Sentences Split Across Separate Lines */}
+            <div className="text-base text-gray-600 font-medium space-y-1">
+              <p>Machine Learning Engineer based in Hawthorne, CA.</p>
+              <p>Specializing in Computer Vision and Recommendation Systems.</p>
+            </div>
+
             <div className="flex flex-wrap gap-4 text-sm font-medium pt-2">
               <a href="mailto:Ragibsakib2002@gmail.com" className="text-uscRed hover:underline">Email</a>
               <span className="text-gray-300">|</span>
@@ -97,8 +148,6 @@ export default function App() {
             Education
           </h2>
           <div className="space-y-6">
-            
-            {/* USC - Current University */}
             <div className="border-l-2 border-uscRed pl-4 py-1">
               <div className="flex justify-between items-start">
                 <div className="flex items-center gap-3">
@@ -119,7 +168,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* UCI */}
             <div className="pl-4 py-1">
               <div className="flex justify-between items-start">
                 <div className="flex items-center gap-3">
@@ -136,7 +184,6 @@ export default function App() {
                 <span className="text-xs text-gray-500 whitespace-nowrap">Sept 2020 – June 2024</span>
               </div>
             </div>
-
           </div>
         </section>
 
@@ -145,7 +192,6 @@ export default function App() {
           <h2 className="text-xl font-bold text-gray-900 border-b border-gray-200 pb-2">
             Work Experience
           </h2>
-          
           <div className="space-y-8">
             <div className="space-y-2">
               <div className="flex justify-between items-baseline">
@@ -187,7 +233,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* Software Projects - 2xN Flexible Alignment Grid */}
+        {/* Software Projects */}
         <section id="projects" className="scroll-mt-20 space-y-6">
           <h2 className="text-xl font-bold text-gray-900 border-b border-gray-200 pb-2">
             Software Projects
@@ -280,10 +326,7 @@ export default function App() {
           <h2 className="text-xl font-bold text-gray-900 border-b border-gray-200 pb-2">
             Technical Skills
           </h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            {/* Systems & Languages */}
             <div className="border border-gray-200 rounded-lg p-5 bg-white shadow-sm hover:border-gray-300 transition-colors">
               <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Languages & Core Systems</h3>
               <div className="flex flex-wrap gap-2">
@@ -295,7 +338,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* AI, ML & Data Systems */}
             <div className="border border-gray-200 rounded-lg p-5 bg-white shadow-sm hover:border-gray-300 transition-colors">
               <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">AI / ML & Vector Search</h3>
               <div className="flex flex-wrap gap-2">
@@ -307,7 +349,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Full-Stack & Mobile */}
             <div className="border border-gray-200 rounded-lg p-5 bg-white shadow-sm hover:border-gray-300 transition-colors">
               <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Web, Mobile & Frameworks</h3>
               <div className="flex flex-wrap gap-2">
@@ -319,7 +360,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Infrastructure & DevOps */}
             <div className="border border-gray-200 rounded-lg p-5 bg-white shadow-sm hover:border-gray-300 transition-colors">
               <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Developer Tools & Infrastructure</h3>
               <div className="flex flex-wrap gap-2">
@@ -330,7 +370,6 @@ export default function App() {
                 ))}
               </div>
             </div>
-
           </div>
         </section>
       </main>
