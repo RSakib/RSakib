@@ -1,6 +1,0 @@
-# Allow all search engines to crawl the portfolio
-User-agent: *
-Allow: /
-
-# Point search engines to your domain
-Host: https://ragibsakib.dev

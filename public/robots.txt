@@ -1,0 +1,8 @@
+# Portfolio website for Ragib Sakib - Machine Learning Engineer
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://ragibsakib.dev/sitemap.xml
+
+Host: https://ragibsakib.dev
