@@ -24,7 +24,7 @@ Currently pursuing an MS in Computer Science (Artificial Intelligence) at the Un
 
 ### Connect with Me
 
-* **Website:** [rsakib.vercel.app](https://rsakib.vercel.app)
+* **Website:** [ragibsakib.dev](https://ragibsakib.dev)
 * **LinkedIn:** [linkedin.com/in/ragibsakib](https://linkedin.com/in/ragibsakib)
 * **Hugging Face:** [huggingface.co/RSakib](https://huggingface.co/RSakib)
 * **Email:** Ragibsakib2002@gmail.com
