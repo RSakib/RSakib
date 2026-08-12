@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('about');
@@ -55,6 +56,8 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-white text-gray-800 font-sans antialiased">
+      {/* Vercel Analytics Component */}
+      <Analytics />
       
       <div 
         className="absolute top-0 left-0 right-0 w-full h-[450px] pointer-events-none z-0 transition-opacity duration-75 ease-linear"
