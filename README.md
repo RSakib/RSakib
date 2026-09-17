@@ -11,14 +11,14 @@ Currently pursuing an MS in Computer Science (Artificial Intelligence) at the Un
   Two-tower teammate retrieval and joint lineup optimization with RAG-generated explanations, deployed on Google Cloud Run.
 
   <p align="center">
-    <img src="public/LoLRecScreenshot.png" alt="League of Legends Team Recommender interface" width="300">
+    <img src="public/LoLRecScreenshot.png" alt="League of Legends Team Recommender interface" width="450">
   </p>
 
 * **[MovieLens 1M Two-Tower Engine](https://github.com/RSakib/Pre-2001-Movie-Recs-via-Two-Tower-Neural-Network)** ([Live Demo](https://huggingface.co/spaces/RSakib/Two_Towers_MovieLens_Recommendation))
   Neural retrieval model trained with in-batch negative ranking loss, indexed with FAISS for low-latency inference.
 
   <p align="center">
-    <img src="public/Netflix-Front-end.jpg" alt="MovieLens Two-Tower recommendation interface" width="300">
+    <img src="public/Netflix-Front-end.jpg" alt="MovieLens Two-Tower recommendation interface" width="450">
   </p>
 
 ---
