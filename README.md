@@ -7,18 +7,18 @@ Currently pursuing an MS in Computer Science (Artificial Intelligence) at the Un
 
 ### Featured ML Projects
 
-* **[MovieLens 1M Two-Tower Engine](https://github.com/RSakib/Pre-2001-Movie-Recs-via-Two-Tower-Neural-Network)** ([Live Demo](https://huggingface.co/spaces/RSakib/Two_Towers_MovieLens_Recommendation))
-  Neural retrieval model trained with in-batch negative ranking loss, indexed with FAISS for low-latency inference.
-
-  <p align="center">
-    <img src="public/Netflix-Front-end.jpg" alt="MovieLens Two-Tower recommendation interface" width="600">
-  </p>
-
 * **[League of Legends: Team Recommender](https://github.com/RSakib/LoL-Team-Optimizer---Two-Tower-RecSys-and-RAG#league-of-legends-team-recommender)** ([Live Demo](https://league-team-recommender-u4kxzm6j4q-uc.a.run.app/))
   Two-tower teammate retrieval and joint lineup optimization with RAG-generated explanations, deployed on Google Cloud Run.
 
   <p align="center">
-    <img src="public/LoLRecScreenshot.png" alt="League of Legends Team Recommender interface" width="600">
+    <img src="public/LoLRecScreenshot.png" alt="League of Legends Team Recommender interface" width="300">
+  </p>
+
+* **[MovieLens 1M Two-Tower Engine](https://github.com/RSakib/Pre-2001-Movie-Recs-via-Two-Tower-Neural-Network)** ([Live Demo](https://huggingface.co/spaces/RSakib/Two_Towers_MovieLens_Recommendation))
+  Neural retrieval model trained with in-batch negative ranking loss, indexed with FAISS for low-latency inference.
+
+  <p align="center">
+    <img src="public/Netflix-Front-end.jpg" alt="MovieLens Two-Tower recommendation interface" width="300">
   </p>
 
 ---
