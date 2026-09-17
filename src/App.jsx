@@ -139,6 +139,16 @@ export default function App() {
               <a href="https://github.com/RSakib" target="_blank" rel="noreferrer" className="text-uscRed hover:underline">GitHub</a>
               <span className="text-gray-300">|</span>
               <a href="https://huggingface.co/RSakib" target="_blank" rel="noreferrer" className="text-uscRed hover:underline">HuggingFace</a>
+              <a
+                href="/Ragib-Sakib-Resume.pdf"
+                download="Ragib-Sakib-Resume.pdf"
+                className="inline-flex items-center gap-1.5 rounded-md bg-uscRed px-3 py-1.5 text-white shadow-sm transition-colors hover:bg-red-800"
+              >
+                <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v12m0 0l-4-4m4 4l4-4M5 20h14" />
+                </svg>
+                <span>Download Resume</span>
+              </a>
             </div>
           </div>
 
