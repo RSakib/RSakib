@@ -249,6 +249,7 @@ export default function App() {
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
                 <div>
                   <h3 className="font-bold text-sm sm:text-base text-gray-900 leading-snug">League of Legends: Team Recommender</h3>
+                  <p className="text-[11px] sm:text-xs text-gray-500 mt-0.5">September 2026</p>
                 </div>
                 <div className="flex items-center gap-2 flex-shrink-0">
                   <a
