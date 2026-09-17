@@ -244,6 +244,54 @@ export default function App() {
             Software Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+
+            <div className="border border-gray-200 rounded-lg p-4 sm:p-5 hover:border-uscRed transition-colors bg-white shadow-sm space-y-3">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                <div>
+                  <h3 className="font-bold text-sm sm:text-base text-gray-900 leading-snug">League of Legends: Team Recommender</h3>
+                </div>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <a
+                    href="https://github.com/RSakib/LoL-Team-Optimizer---Two-Tower-RecSys-and-RAG#league-of-legends-team-recommender"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 border border-uscRed text-uscRed hover:bg-uscRed/5 text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md transition-colors"
+                  >
+                    <span>Repo</span>
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://league-team-recommender-u4kxzm6j4q-uc.a.run.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 bg-uscRed hover:bg-red-800 text-white text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md transition-colors"
+                  >
+                    <span>Demo</span>
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div className="overflow-hidden rounded-md border border-gray-200 bg-slate-950">
+                <img
+                  src="/LoLRecScreenshot.png"
+                  alt="League of Legends Team Recommender interface"
+                  className="w-full h-32 sm:h-36 object-cover object-top hover:scale-[1.01] transition-transform duration-200"
+                />
+              </div>
+
+              <ul className="list-disc list-inside text-xs text-gray-600 space-y-1">
+                <li>Trained a PyTorch two-tower model on 69,378 player pairs to rank teammates by role, rank, and champion preferences.</li>
+                <li>Built a joint lineup scorer using player interactions and champion pools to optimize four teammate selections together.</li>
+                <li>Integrated Sentence Transformers, ChromaDB, and Qwen RAG to explain recommendations using 2,854 real player profiles.</li>
+                <li>Deployed a Dockerized Gradio/FastAPI app on Google Cloud Run with scale-to-zero settings to minimize idle hosting costs.</li>
+                <li>Benchmarked role-and-rank retrieval to validate ranking, exceeding popularity NDCG@10 by 29%.</li>
+              </ul>
+            </div>
             
             <div className="border border-gray-200 rounded-lg p-4 sm:p-5 hover:border-uscRed transition-colors bg-white shadow-sm space-y-3">
               <div className="flex items-start justify-between gap-2">
@@ -251,17 +299,30 @@ export default function App() {
                   <h3 className="font-bold text-sm sm:text-base text-gray-900 leading-snug">MovieLens 1M Two-Tower Engine</h3>
                   <p className="text-[11px] sm:text-xs text-gray-500 mt-0.5">June 2026</p>
                 </div>
-                <a 
-                  href="https://github.com/RSakib/Pre-2001-Movie-Recs-via-Two-Tower-Neural-Network" 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="inline-flex items-center gap-1.5 bg-uscRed hover:bg-red-800 text-white text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md transition-all flex-shrink-0"
-                >
-                  <span>Repo/Demo</span>
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <a
+                    href="https://github.com/RSakib/Pre-2001-Movie-Recs-via-Two-Tower-Neural-Network"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 border border-uscRed text-uscRed hover:bg-uscRed/5 text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md transition-colors"
+                  >
+                    <span>Repo</span>
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://huggingface.co/spaces/RSakib/Two_Towers_MovieLens_Recommendation"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 bg-uscRed hover:bg-red-800 text-white text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md transition-colors"
+                  >
+                    <span>Demo</span>
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
               </div>
 
               <div className="overflow-hidden rounded-md border border-gray-200 bg-black">
