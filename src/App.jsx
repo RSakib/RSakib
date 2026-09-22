@@ -274,7 +274,7 @@ export default function App() {
                     </svg>
                   </a>
                   <a
-                    href="https://league-team-recommender-u4kxzm6j4q-uc.a.run.app/"
+                    href="https://lol-recsys-model-loading-page.vercel.app/"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-1.5 bg-uscRed hover:bg-red-800 text-white text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md transition-colors"

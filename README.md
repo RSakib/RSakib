@@ -7,7 +7,7 @@ Currently pursuing an MS in Computer Science (Artificial Intelligence) at the Un
 
 ### Featured ML Projects
 
-* **[League of Legends: Team Recommender](https://github.com/RSakib/LoL-Team-Optimizer---Two-Tower-RecSys-and-RAG#league-of-legends-team-recommender)** ([Live Demo](https://league-team-recommender-u4kxzm6j4q-uc.a.run.app/))
+* **[League of Legends: Team Recommender](https://github.com/RSakib/LoL-Team-Optimizer---Two-Tower-RecSys-and-RAG#league-of-legends-team-recommender)** ([Live Demo](https://lol-recsys-model-loading-page.vercel.app/))
   Two-tower teammate retrieval and joint lineup optimization with RAG-generated explanations, deployed on Google Cloud Run.
 
   <p align="left">
