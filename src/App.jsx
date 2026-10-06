@@ -211,7 +211,7 @@ export default function App() {
                 <h3 className="font-semibold text-sm sm:text-base text-gray-900">Canon USA</h3>
                 <span className="text-[11px] sm:text-xs text-gray-500">Irvine, CA</span>
               </div>
-              <p className="text-xs sm:text-sm text-uscRed font-medium">Software and Machine Learning Engineer (Trainee)</p>
+              <p className="text-xs sm:text-sm text-uscRed font-medium">Software and Machine Learning Engineer</p>
               <p className="text-[11px] sm:text-xs text-gray-500 font-medium">Sept 2023 – Feb 2025</p>
               <ul className="list-disc list-inside text-xs sm:text-sm text-gray-600 space-y-1 pl-1">
                 <li>Prototyped a Python pipeline using SAM 2 segmentation, Hough transforms, and clustering for object corner localization.</li>
